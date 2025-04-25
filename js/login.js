@@ -1,6 +1,4 @@
 async function verificaUsuario() {
-  debugger;
-
   let login = $("#cLogin").val();
   let senha = $("#cSenha").val();
 
@@ -18,6 +16,8 @@ async function verificaUsuario() {
       localStorage.setItem("contaLogada", JSON.stringify(usuario));
 
       alert("Autenticação realizada com sucesso!");
+
+      window.location.href = "../landingPage.html";
     } else {
       alert("Usuário ou senha inválidos!");
     }

@@ -1,0 +1,9 @@
+$(document).ready(function () {
+    let usuario = JSON.parse(localStorage.getItem("contaLogada"));    
+    $("#nomeConta").text(usuario.nome);
+});
+
+function logout() {
+    localStorage.removeItem("contaLogada");
+    window.location.href = "../login.html";
+}
