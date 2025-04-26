@@ -3,7 +3,15 @@ var usuario = JSON.parse(localStorage.getItem("contaLogada"));
 
 $(document).ready(function () {
   monitoraAlerta();
+  verificaLogin();
 });
+
+function verificaLogin() {
+    if (usuario == null) {
+        alert("Você precisa fazer login para acessar!");
+        window.location.href = "../login.html";
+    }
+}
 
 function monitoraAlerta() {
     verificaAlertaP();
