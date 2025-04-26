@@ -2,7 +2,6 @@
 var usuario = JSON.parse(localStorage.getItem("contaLogada"));
 
 $(document).ready(function () {
-    debugger;
   monitoraAlerta();
 });
 

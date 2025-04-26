@@ -21,11 +21,11 @@
     </div>
 
     <div class="container">
-      <h1 class="text-center border-bottom border-danger mb-4">
+      <h1 class="text-center border-bottom border-danger mb-4 mt-4">
         Central de Ações
       </h1>
 
-      <div class="col-5 mb-4 form-group">
+      <div class="col-12 col-md-7  mb-4 form-group">
         <label class="form-label">Selecione uma ação</label>
         <select onchange="alteraModo()" class="form-control" id="listOp">
           <option selected disabled>Selecione uma ação</option>
@@ -35,13 +35,13 @@
       </div>
 
       <div id="opDuo" class="row" style="display: none">
-        <div class="col-10 form-group">
+        <div class="col-12 col-md-10 form-group">
           <label class="form-label">Selecione um produto cadastrado</label>
           <select onchange="loadPreco()" class="form-control" id="listProdutos">
             <option selected disabled>Selecione um produto</option>
           </select>
         </div>
-        <div class="col-2 form-group">
+        <div id="opPreco" class="col-4 col-md-2 form-group">
           <label class="form-label">Preço Atual</label>
           <input id="precoAProduto" class="form-control" type="text" readonly />
         </div>
@@ -50,14 +50,13 @@
       <div id="opAlerta" class="mt-4" style="display: none">
         <div class="form-group">
           <div class="row">
-            <label class="col-10 mb-2" for="formControlRange"
-              >Selecione o preço limite para o alerta</label
+            <label class="col-8 mb-2" for="formControlRange"
+              >Selecione o limite para o alerta</label
             >
             <input
               id="precoLProduto"
-              class="col-1 rounded"
+              class="col-3 col-md-1"
               type="text"
-              style="margin-left: 96px"
               readonly
             />
           </div>

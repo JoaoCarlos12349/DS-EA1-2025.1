@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   $("#nomeConta").text(usuario.nome);
   loadAlertas();
@@ -9,9 +8,15 @@ function loadAlertas() {
 
   let info = vetor.find((info) => info.id == usuario.id);
 
-  info.alertas.forEach((alerta) => {
-    adicionarLinha(alerta);
-  });
+  if (info.alertas.length == 0) {
+    var tabela = $("#tabelaAlertas");
+    var linha = $("<caption> Você não possui alertas registrados</caption>");
+    tabela.append(linha);
+  } else {
+    info.alertas.forEach((alerta) => {
+      adicionarLinha(alerta);
+    });
+  }
 }
 
 async function adicionarLinha(alerta) {
@@ -28,7 +33,9 @@ async function adicionarLinha(alerta) {
 
   $("<td></td>").text(item.descricao).appendTo(linha);
   $("<td></td>").text(alerta.valorLimite).appendTo(linha);
-  $("<td></td>").text("R$"+item.valor).appendTo(linha);
+  $("<td></td>")
+    .text("R$" + item.valor)
+    .appendTo(linha);
 
   tbody.append(linha);
 }

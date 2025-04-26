@@ -10,9 +10,15 @@ function loadCompras() {
 
   let info = vetor.find((info) => info.id == usuario.id);
 
-  info.compras.forEach((compra) => {
-    adicionarLinha(compra);
-  });
+  if (info.compras.length == 0) {
+    var tabela = $("#tabelaCompras");
+    var linha = $("<caption> Você não possui compras registradas</caption>");
+    tabela.append(linha);
+  } else {
+    info.compras.forEach((compra) => {
+      adicionarLinha(compra);
+    });
+  }
 }
 
 async function adicionarLinha(compra) {
@@ -20,9 +26,7 @@ async function adicionarLinha(compra) {
   var linha = $("<tr></tr>");
 
   $("<td></td>").text(compra.descricao).appendTo(linha);
-  $("<td></td>")
-    .text(compra.valorComprado)
-    .appendTo(linha);
+  $("<td></td>").text(compra.valorComprado).appendTo(linha);
 
   try {
     let resp = await fetch(

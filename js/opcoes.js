@@ -101,7 +101,6 @@ function atualizaRange() {
 }
 
 function realizarCompra() {
-  debugger;
   let produto = produtos.find(
     (produto) => produto.id == $("#listProdutos").val()
   );

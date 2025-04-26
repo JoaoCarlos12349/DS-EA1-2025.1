@@ -1,0 +1,15 @@
+@media (min-width: 300px) { 
+    #opPreco{
+        margin-top: 20px;
+    }
+ }
+
+@media (min-width: 768px) { 
+    #opPreco{
+        margin-top: 0px;
+    }
+
+    #precoLProduto{
+        margin-left: 100px;
+    }
+ }
