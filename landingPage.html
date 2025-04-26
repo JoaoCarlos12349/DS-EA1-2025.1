@@ -10,7 +10,9 @@
   <body>
     <div class="bg-danger ps-3 d-flex justify-content-between p-2">
       <div class="p-2">
-        <a class="p-2 text-light text-decoration-none fw-bold" href="#"
+        <a
+          class="p-2 text-light text-decoration-none fw-bold"
+          href="landingPage.html"
           >OdinLine Alertas</a
         >
       </div>
@@ -19,17 +21,18 @@
         <a class="btn btn-dark" onclick="logout()">Sair</a>
       </div>
     </div>
-    <div class="row justify-content-evenly mt-5">
-      <div class="col-5">
+    <div class="row justify-content-center mt-5">
+      <div class="col-10 mb-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Alerta de Preços</h5>
+            <h5 class="card-title">Registro de Compras e Alertas</h5>
             <p class="card-text">
-              Esta opção te notifica quando o produto que você está acompanhando
-              atingir o valor desejado. Nós monitoramos os preços para você e
-              avisamos assim que aparecer uma boa oferta!
+              Acesse esta opção para criar notificações quando o produto que
+              você está acompanhando atingir o valor desejado ou salvar compras
+              realizadas. Nós monitoramos os preços para você e avisamos assim
+              que aparecer uma boa oferta!
             </p>
-            <a href="#" class="btn btn-primary">Visitar</a>
+            <a href="opcoes.html" class="btn btn-primary">Visitar</a>
           </div>
         </div>
       </div>
@@ -38,11 +41,42 @@
           <div class="card-body">
             <h5 class="card-title">Minhas Compras</h5>
             <p class="card-text">
-              Use esta opção para registrar os produtos que você comprou. Assim,
+              Use esta opção para conferir os produtos que você comprou. Assim,
               você pode acompanhar seu histórico de compras, comparar preços ao
               longo do tempo e manter tudo organizado em um só lugar.
             </p>
-            <a href="#" class="btn btn-primary">Visitar</a>
+            <a href="compras.html" class="btn btn-primary">Visitar</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Meus Alertas</h5>
+            <p class="card-text">
+              Use esta opção para conferir os alertas que você criou. Assim,
+              você pode acompanhar seu histórico de alertas, comparar preços ao
+              longo do tempo e manter tudo organizado em um só lugar.
+            </p>
+            <a href="alertas.html" class="btn btn-primary">Visitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="alerta" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">PREÇO DE ALERTA DEFINIDO ATINGIDO!!</h5>
+          </div>
+          <div class="modal-body">
+            <p id="corpoModal"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="goCompra" class="btn btn-primary">
+              Ir para Ações
+            </button>
           </div>
         </div>
       </div>
@@ -51,4 +85,5 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
   <script type="text/javascript" src="js/landingPage.js"></script>
+  <script type="text/javascript" src="js/alerta.js"></script>
 </html>
