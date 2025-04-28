@@ -6,18 +6,25 @@ $(document).ready(function () {
 });
 
 function loadCompras() {
+  debugger;
   let vetor = JSON.parse(localStorage.getItem("vetor"));
 
-  let info = vetor.find((info) => info.id == usuario.id);
-
-  if (info.compras.length == 0) {
+  if (vetor == null) {
     var tabela = $("#tabelaCompras");
     var linha = $("<caption> Você não possui compras registradas</caption>");
     tabela.append(linha);
   } else {
-    info.compras.forEach((compra) => {
-      adicionarLinha(compra);
-    });
+    let info = vetor.find((info) => info.id == usuario.id);
+
+    if (info.compras.length == 0) {
+      var tabela = $("#tabelaCompras");
+      var linha = $("<caption> Você não possui compras registradas</caption>");
+      tabela.append(linha);
+    } else {
+      info.compras.forEach((compra) => {
+        adicionarLinha(compra);
+      });
+    }
   }
 }
 
