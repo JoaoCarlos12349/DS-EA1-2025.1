@@ -50,5 +50,5 @@ async function adicionarLinha(compra) {
 
 function logout() {
   localStorage.removeItem("contaLogada");
-  window.location.href = "../login.html";
+  window.location.href = "../index.html";
 }

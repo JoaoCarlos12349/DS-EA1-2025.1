@@ -9,7 +9,7 @@ $(document).ready(function () {
 function verificaLogin() {
     if (usuario == null) {
         alert("Você precisa fazer login para acessar!");
-        window.location.href = "../login.html";
+        window.location.href = "../index.html";
     }
 }
 
