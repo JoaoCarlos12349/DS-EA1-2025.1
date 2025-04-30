@@ -6,7 +6,6 @@ $(document).ready(function () {
 });
 
 function loadCompras() {
-  debugger;
   let vetor = JSON.parse(localStorage.getItem("vetor"));
 
   if (vetor == null) {

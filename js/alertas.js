@@ -6,16 +6,22 @@ $(document).ready(function () {
 function loadAlertas() {
   let vetor = JSON.parse(localStorage.getItem("vetor"));
 
-  let info = vetor.find((info) => info.id == usuario.id);
-
-  if (info.alertas.length == 0) {
+  if (vetor == null) {
     var tabela = $("#tabelaAlertas");
-    var linha = $("<caption> Você não possui alertas registrados</caption>");
+    var linha = $("<caption> Você não possui alertas registradas</caption>");
     tabela.append(linha);
   } else {
-    info.alertas.forEach((alerta) => {
-      adicionarLinha(alerta);
-    });
+    let info = vetor.find((info) => info.id == usuario.id);
+
+    if (info.compras.length == 0) {
+      var tabela = $("#tabelaAlertas");
+      var linha = $("<caption> Você não possui alertas registradas</caption>");
+      tabela.append(linha);
+    } else {
+      info.compras.forEach((compra) => {
+        adicionarLinha(compra);
+      });
+    }
   }
 }
 
